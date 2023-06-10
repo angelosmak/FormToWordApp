@@ -27,7 +27,6 @@ class FormSubmissionsController < ApplicationController
 
   # PATCH/PUT /form_submissions/1 or /form_submissions/1.json
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_form_submission
