@@ -1,4 +1,4 @@
-<div class="container card shadow col-6 mt-4 p-2">
+<div class="container card shadow col-6 mt-2 pb-2">
   <h1>Legal Help Form:</h1>
   <%= simple_form_for @form_submission do |f| %>
     <%= f.input :name ,as: :string%>
@@ -13,13 +13,15 @@
 
     <%= f.input :legal_request, as: :select, collection: ['Interview preparation', 'Appeal', 'Family reunification'] %>
 
-    <%= f.input :family_members_in_greece, as: :boolean %>
+    <%= f.input :family_members_in_Greece, as: :boolean %>
 
-    <%= f.input :urgent, as: :boolean %>
-    <% if f.object.urgent? %>
-      <%= f.input :urgent_conditions, as: :string %>
-    <% end %>
-
+    <%= f.input :urgent, as: :boolean, label: "Urgent?"%>
+    <div class="ms-3">
+      <p>Urgent cases are considered the following:</p>
+      <p>• Upcoming interview appointment in <strong>less than a week</strong>.</p>
+      <p>• Deadline for appeal <strong>less than 2 weeks</strong>.</p>
+      <p>• Detention (*Please note that our organisation can assist only in particular cases of detention after the <strong>notification of the second / third rejection</strong>).</p>
+    </div>
     <%= f.input :detention, as: :boolean %>
 
     <%= f.button :submit, class: 'btn btn-primary' %>
