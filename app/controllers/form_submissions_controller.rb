@@ -37,12 +37,10 @@ class FormSubmissionsController < ApplicationController
   def form_submission_params
     params.require(:form_submission).permit(
       :name,
-      :email,
-      :message,
       :country_of_origin,
       :languages,
       :location,
-      :stage_of_asylum_procedure,
+      :sylum_procedure_stage,
       :legal_request,
       :family_members_in_greece,
       :urgent,
@@ -54,12 +52,13 @@ class FormSubmissionsController < ApplicationController
   def generate_pdf_document(form_submission)
     content = <<~HTML
       <h1>Hotline Form </h1>
-      <p>Languages: #{form_submission.languages}</p>
+      <p>name: #{form_submission.name}</p>
       <p>Contry of origin: #{form_submission.country_of_origin}</p>
       <p>Languages: #{form_submission.languages}</p>
-      <p>Asylum Procedure Stage: #{form_submission.location}</p>
-      <p>Legal Request: #{form_submission.languages}</p>
-      <p>Family in Greece: #{form_submission.languages}</p>
+      <p>Location: #{form_submission.location}</p>
+      <p>Asylum Procedure Stage: #{form_submission.asylum_procedure_stage}</p>
+      <p>Legal Request: #{form_submission.legal_request}</p>
+      <p>Family in Greece: #{form_submission.family_members_in_greece}</p>
       <p>Urgent: #{form_submission.urgent}</p>
       <p>Detention: #{form_submission.detention}</p>
 
