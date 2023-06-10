@@ -1,0 +1,30 @@
+<h1>New form submission</h1>
+<%= simple_form_for @form_submission do |f| %>
+  <%= f.input :name ,as: :string%>
+
+  <%= f.input :country_of_origin ,as: :string%>
+
+  <%= f.input :languages, as: :string %>
+
+  <%= f.input :location, as: :radio_buttons, collection: ['Camp', 'Self-accommodated'] %>
+
+  <%= f.input :asylum_procedure_stage, as: :select, collection: ['Registration', 'Upcoming IV appointment', 'First decision pending', 'Second decision pending', 'Third decision pending', 'Notified subsequent application', 'Refugee status'] %>
+
+  <%= f.input :legal_request, as: :select, collection: ['Interview preparation', 'Appeal', 'Family reunification'] %>
+
+  <%= f.input :family_members_in_greece, as: :boolean %>
+
+  <%= f.input :urgent, as: :boolean %>
+  <% if f.object.urgent? %>
+    <%= f.input :urgent_conditions, as: :string %>
+  <% end %>
+
+  <%= f.input :detention, as: :boolean %>
+
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+
+
+<div>
+  <%= link_to "Back to form submissions", form_submissions_path %>
+</div>
