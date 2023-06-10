@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_184521) do
     t.string "legal_request"
     t.boolean "family_members_in_greece"
     t.boolean "urgent"
-    t.text "urgent_conditions"
     t.boolean "detention"
   end
 

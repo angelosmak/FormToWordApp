@@ -10,7 +10,6 @@ class AddFieldsToFormSubmissions < ActiveRecord::Migration[6.1]
     add_column :form_submissions, :legal_request, :string
     add_column :form_submissions, :family_members_in_greece, :boolean
     add_column :form_submissions, :urgent, :boolean
-    add_column :form_submissions, :urgent_conditions, :text
     add_column :form_submissions, :detention, :boolean
   end
 end

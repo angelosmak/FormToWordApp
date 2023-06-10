@@ -62,7 +62,6 @@ class FormSubmissionsController < ApplicationController
       <p>Legal Request: #{form_submission.languages}</p>
       <p>Family in Greece: #{form_submission.languages}</p>
       <p>Urgent: #{form_submission.urgent}</p>
-      <p>Urgent conditions: #{form_submission.urgent_conditions}</p>
       <p>Detention: #{form_submission.detention}</p>
 
     HTML
